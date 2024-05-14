@@ -21,7 +21,8 @@ CREATE TABLE books (
     publisher INT REFERENCES publishers(publisher_id), -- Publisher of the book
     publication_date DATE, -- Publication date of the book
     language VARCHAR(50), -- Language of the book
-    ISBN VARCHAR(13) UNIQUE -- International Standard Book Number
+    ISBN VARCHAR(13) UNIQUE, -- International Standard Book Number
+    number_of_pages INT
 );
 
 -- Authors Table
