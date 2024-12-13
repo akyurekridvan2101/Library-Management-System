@@ -55,6 +55,7 @@
             oduncIslemleri = new Button();
             personelIslemleri = new Button();
             adminIslemleri = new Button();
+            uyeIslemleri = new Button();
             loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -278,6 +279,7 @@
             // tercihlerPaneli
             // 
             tercihlerPaneli.BackColor = Color.DeepSkyBlue;
+            tercihlerPaneli.Controls.Add(uyeIslemleri);
             tercihlerPaneli.Controls.Add(logoutButton);
             tercihlerPaneli.Controls.Add(pictureBox4);
             tercihlerPaneli.Controls.Add(kitapIslemleri);
@@ -317,7 +319,7 @@
             // 
             kitapIslemleri.BackColor = Color.Green;
             kitapIslemleri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            kitapIslemleri.Location = new Point(33, 286);
+            kitapIslemleri.Location = new Point(33, 280);
             kitapIslemleri.Name = "kitapIslemleri";
             kitapIslemleri.Size = new Size(215, 45);
             kitapIslemleri.TabIndex = 24;
@@ -329,7 +331,7 @@
             // 
             oduncIslemleri.BackColor = Color.DeepSkyBlue;
             oduncIslemleri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            oduncIslemleri.Location = new Point(33, 373);
+            oduncIslemleri.Location = new Point(33, 360);
             oduncIslemleri.Name = "oduncIslemleri";
             oduncIslemleri.Size = new Size(215, 45);
             oduncIslemleri.TabIndex = 27;
@@ -341,7 +343,7 @@
             // 
             personelIslemleri.BackColor = Color.DeepSkyBlue;
             personelIslemleri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            personelIslemleri.Location = new Point(33, 471);
+            personelIslemleri.Location = new Point(33, 440);
             personelIslemleri.Name = "personelIslemleri";
             personelIslemleri.Size = new Size(215, 45);
             personelIslemleri.TabIndex = 26;
@@ -353,13 +355,24 @@
             // 
             adminIslemleri.BackColor = Color.DeepSkyBlue;
             adminIslemleri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            adminIslemleri.Location = new Point(33, 568);
+            adminIslemleri.Location = new Point(33, 520);
             adminIslemleri.Name = "adminIslemleri";
             adminIslemleri.Size = new Size(215, 45);
             adminIslemleri.TabIndex = 25;
             adminIslemleri.Text = "YÖNETİCİ İŞLEMLERİ";
             adminIslemleri.UseVisualStyleBackColor = false;
             adminIslemleri.Click += adminIslemleri_Click;
+            // 
+            // uyeIslemleri
+            // 
+            uyeIslemleri.BackColor = Color.DeepSkyBlue;
+            uyeIslemleri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            uyeIslemleri.Location = new Point(33, 600);
+            uyeIslemleri.Name = "uyeIslemleri";
+            uyeIslemleri.Size = new Size(215, 45);
+            uyeIslemleri.TabIndex = 31;
+            uyeIslemleri.Text = "ÜYE İŞLEMLERİ";
+            uyeIslemleri.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
@@ -416,5 +429,6 @@
         private Button oduncIslemleri;
         private Button personelIslemleri;
         private Button adminIslemleri;
+        private Button uyeIslemleri;
     }
 }

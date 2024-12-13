@@ -1,4 +1,6 @@
-using LibraryManagementSystem;
+using System;
+using System.Data;
+using Microsoft.Data.SqlClient; // SQL Server için kullanacaðýmýz kütüphane
 
 namespace LibraryManagementSystem
 {
@@ -6,7 +8,6 @@ namespace LibraryManagementSystem
     {
         public static DatabaseManager databaseManager;
         public static bool loginBool = false;
-
 
         /// <summary>
         ///  The main entry point for the application.
@@ -17,7 +18,7 @@ namespace LibraryManagementSystem
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
 
-            databaseManager = new DatabaseManager("localhost", "Library", "postgres", "Rdvn212121.");
+            databaseManager = new DatabaseManager("DESKTOP-N5P19P1\\SQLEXPRESS", "LibraryManagementSystem");
             databaseManager.OpenConnection();
 
             ApplicationConfiguration.Initialize();

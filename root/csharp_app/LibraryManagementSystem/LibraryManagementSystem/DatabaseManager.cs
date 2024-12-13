@@ -1,27 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Npgsql;
+using System.Data;
+using Microsoft.Data.SqlClient; // SQL Server için kullanacağımız kütüphane
 
 namespace LibraryManagementSystem
 {
     public class DatabaseManager
     {
         private string connectionString; // Veritabanı bağlantı dizesi
-        private NpgsqlConnection connection; // NpgsqlConnection nesnesi
+        private SqlConnection connection; // SqlConnection nesnesi
 
-        public DatabaseManager(string host, string database, string username, string password)
+        public DatabaseManager(string server, string database)
         {
-            // PostgreSQL veritabanına bağlanma dizesi oluşturma
-            connectionString = $"Host = {host};Username = {username};Password = {password};Database={database};";
-            connection = new NpgsqlConnection(connectionString);
+            // SQL Server veritabanına bağlanma dizesi oluşturma
+            connectionString = $"Server={server};Database={database};Integrated Security=True;TrustServerCertificate=True;";
+            connection = new SqlConnection(connectionString);
         }
 
         public void OpenConnection()
         {
-            if (connection.State != System.Data.ConnectionState.Open)
+            if (connection.State != ConnectionState.Open)
             {
                 connection.Open(); // Bağlantıyı açma
             }
@@ -29,16 +26,15 @@ namespace LibraryManagementSystem
 
         public void CloseConnection()
         {
-            if (connection.State != System.Data.ConnectionState.Closed)
+            if (connection.State != ConnectionState.Closed)
             {
                 connection.Close(); // Bağlantıyı kapatma
             }
         }
 
-        public NpgsqlConnection GetConnection()
+        public SqlConnection GetConnection()
         {
             return connection; // Bağlantıyı döndürme
         }
     }
-
 }
